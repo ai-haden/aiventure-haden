@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Haden.NxtSharp.Sensors;
+using System.Xml;
 
 namespace Haden.Runtime
 {
