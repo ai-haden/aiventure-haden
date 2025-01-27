@@ -14,7 +14,7 @@ namespace Haden.NxtSharp.Motors
         /// </summary>
 		public NxtMotor()
         {
-			InitializeComponent();
+			
 		}
         /// <summary>
         /// The brick this motor is connected to.

@@ -26,8 +26,7 @@ namespace Haden.NxtSharp.Controllers
         /// </summary>
 		public NxtMotorControl()
         {
-			InitializeComponent();
-			UpdateView();
+			
 		}
         /// <summary>
         /// Should the motor put in brake mode when stopped?
@@ -64,7 +63,6 @@ namespace Haden.NxtSharp.Controllers
 			}
 			set {
 				_orientation = value;
-				UpdateView();
 			}
 		}
 		/// <summary>
@@ -76,7 +74,6 @@ namespace Haden.NxtSharp.Controllers
 			}
 			set {
 				_buttonDistance = value;
-				UpdateView();
 			}
 		}
 
@@ -88,7 +85,7 @@ namespace Haden.NxtSharp.Controllers
         {
 			if(Motor == null)
             {
-				MessageBox.Show("Can't turn! There is no motor connected to this control.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				//MessageBox.Show("Can't turn! There is no motor connected to this control.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
             else
             {
@@ -108,7 +105,7 @@ namespace Haden.NxtSharp.Controllers
         {
             if (Motor == null)
             {
-                MessageBox.Show("Can't turn! There is no motor connected to this control.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Can't turn! There is no motor connected to this control.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -126,7 +123,7 @@ namespace Haden.NxtSharp.Controllers
         {
 			if(Motor == null)
             {
-				throw; //Console.WriteLine("Can't turn! There is no motor connected to this control.");
+				//throw; //Console.WriteLine("Can't turn! There is no motor connected to this control.");
 			}
             else
             {
@@ -146,7 +143,7 @@ namespace Haden.NxtSharp.Controllers
         {
             if (Motor == null)
             {
-                MessageBox.Show("Can't turn! There is no motor connected to this control.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Can't turn! There is no motor connected to this control.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

@@ -14,6 +14,7 @@ namespace Haden.NxtSharp.Brick
     /// </summary>
 	public class NxtBrick
     {
+		private System.Timers.Timer keepAliveTimer;
         delegate void NxtMotorEvent(NxtMotor motor);
         private Thread _pollThread;
         private List<NxtSensor> _pollList;
@@ -34,23 +35,14 @@ namespace Haden.NxtSharp.Brick
         /// </summary>
         [Browsable(false)]
         public BrickCommunicator Communicator { get; private set; }
-        /// <inheritdoc />
-        /// <summary>
-        /// Initializes a new instance of the <see cref="T:Haden.NxtSharp.Brick.NxtBrick" /> class.
-        /// </summary>
-        public NxtBrick(string comPortName = "COM40")
-        {
-			InitializeComponent();
-            ComPortName = comPortName;
-        }
-        /// <inheritdoc />
-        /// <summary>
-        /// Initializes a new instance of the <see cref="T:Haden.NxtSharp.Brick.NxtBrick" /> class using the IContainer.
-        /// </summary>
-		public NxtBrick(IContainer container)
-        {
-			container.Add(this);
-			InitializeComponent();
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:Haden.NxtSharp.Brick.NxtBrick" /> class.
+		/// </summary>
+		public NxtBrick(string comPortName = "COM40")
+		{
+			ComPortName = comPortName;
+			keepAliveTimer = new System.Timers.Timer(1000);
+			keepAliveTimer.Elapsed += KeepAliveTimerTick;
 		}
 
 		#region Connection
@@ -504,7 +496,6 @@ namespace Haden.NxtSharp.Brick
 		}
 
 		#endregion
-
         #region Events
         /// <summary>
         /// Occurs when connected.

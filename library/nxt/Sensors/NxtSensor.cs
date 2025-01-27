@@ -13,16 +13,7 @@ namespace Haden.NxtSharp.Sensors
         /// </summary>
         public NxtSensor()
         {
-            InitializeComponent();
-        }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NxtSensor" /> class using IContainer.
-        /// </summary>
-        /// <param name="container">The container.</param>
-        public NxtSensor(IContainer container)
-        {
-            container.Add(this);
-            InitializeComponent();
+            AutoPoll = false;
         }
 
         /// <summary>

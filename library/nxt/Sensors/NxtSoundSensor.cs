@@ -6,7 +6,7 @@ namespace Haden.NxtSharp.Sensors
     /// <summary>
     /// The class encapsulating the functionality of the sound sensor.
     /// </summary>
-	public partial class NxtSoundSensor : NxtSensor
+	public class NxtSoundSensor : NxtSensor
     {
         bool _adjustForHumanEar = true;
         /// <summary>
@@ -14,20 +14,11 @@ namespace Haden.NxtSharp.Sensors
         /// </summary>
 		public NxtSoundSensor()
         {
-			InitializeComponent();
-		}
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NxtSoundSensor"/> class using IContainer.
-        /// </summary>
-		public NxtSoundSensor(IContainer container)
-        {
-			container.Add(this);
-			InitializeComponent();
+			
 		}
         /// <summary>
         /// Should the sensor adjust for the sensitivity of the human ear?
         /// </summary>
-		[Category("Lego NXT"), Description("Should the sensor compensate for the sensitivity of the human ear?")]
 		public bool AdjustForHumanEar {
 			get {
 				return _adjustForHumanEar;

@@ -13,20 +13,11 @@ namespace Haden.NxtSharp.Sensors
         /// </summary>
 		public NxtLightSensor()
         {
-			InitializeComponent();
-		}
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NxtLightSensor"/> class using IContainer.
-        /// </summary>
-		public NxtLightSensor(IContainer container)
-        {
-			container.Add(this);
-			InitializeComponent();
+			
 		}
         /// <summary>
         /// Should the light sensor generate its own light?
         /// </summary>
-        [Category("Lego NXT"), Description("Should the light sensor generate its own light?")]
         public bool Active { get; set; }
         /// <summary>
 		/// Use the boolean mode.

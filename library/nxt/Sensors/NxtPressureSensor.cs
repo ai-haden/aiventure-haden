@@ -5,23 +5,16 @@ namespace Haden.NxtSharp.Sensors
     /// <summary>
     /// The class encapsulating the functionality of the pressure sensor.
     /// </summary>
-	public partial class NxtPressureSensor : NxtSensor
+	public class NxtPressureSensor : NxtSensor
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="NxtPressureSensor"/> class.
         /// </summary>
 		public NxtPressureSensor()
         {
-			InitializeComponent();
+			
 		}
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NxtPressureSensor"/> class using IContainer.
-        /// </summary>
-		public NxtPressureSensor(IContainer container)
-        {
-			container.Add(this);
-			InitializeComponent();
-		}
+
 		/// <summary>
 		/// Use the boolean mode.
 		/// </summary>
