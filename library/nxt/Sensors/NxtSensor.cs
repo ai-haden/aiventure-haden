@@ -5,7 +5,7 @@ using Haden.NxtSharp.Utilties;
 
 namespace Haden.NxtSharp.Sensors
 {
-    public static class NxtSensor
+    public class NxtSensor
     {
         int _autoPollDelay = 100;
         /// <summary>
@@ -77,7 +77,6 @@ namespace Haden.NxtSharp.Sensors
         /// <summary>
         /// The last input values result.
         /// </summary>
-        [Browsable(false)]
         public NxtGetInputValues LastResult { get; private set; }
         /// <summary>
         /// The last time the sensor was polled (using Haden.Utilities.MilliSeconds()).
