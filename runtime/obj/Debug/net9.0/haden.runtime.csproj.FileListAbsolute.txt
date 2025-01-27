@@ -1,0 +1,6 @@
+C:\ame\aiventure\aiventure-github\aiventure-haden\runtime\obj\Debug\net9.0\haden.runtime.csproj.AssemblyReference.cache
+C:\ame\aiventure\aiventure-github\aiventure-haden\runtime\obj\Debug\net9.0\haden.runtime.GeneratedMSBuildEditorConfig.editorconfig
+C:\ame\aiventure\aiventure-github\aiventure-haden\runtime\obj\Debug\net9.0\haden.runtime.AssemblyInfoInputs.cache
+C:\ame\aiventure\aiventure-github\aiventure-haden\runtime\obj\Debug\net9.0\haden.runtime.AssemblyInfo.cs
+C:\ame\aiventure\aiventure-github\aiventure-haden\runtime\obj\Debug\net9.0\haden.runtime.csproj.CoreCompileInputs.cache
+C:\ame\aiventure\aiventure-github\aiventure-haden\runtime\obj\Debug\net9.0\haden.runtime.sourcelink.json

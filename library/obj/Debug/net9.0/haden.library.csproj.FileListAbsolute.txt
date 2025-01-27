@@ -1,0 +1,12 @@
+C:\ame\aiventure\aiventure-github\aiventure-haden\library\obj\Debug\net9.0\haden.library.GeneratedMSBuildEditorConfig.editorconfig
+C:\ame\aiventure\aiventure-github\aiventure-haden\library\obj\Debug\net9.0\haden.library.AssemblyInfoInputs.cache
+C:\ame\aiventure\aiventure-github\aiventure-haden\library\obj\Debug\net9.0\haden.library.AssemblyInfo.cs
+C:\ame\aiventure\aiventure-github\aiventure-haden\library\obj\Debug\net9.0\haden.library.csproj.CoreCompileInputs.cache
+C:\ame\aiventure\aiventure-github\aiventure-haden\library\obj\Debug\net9.0\haden.library.sourcelink.json
+C:\ame\aiventure\aiventure-github\aiventure-haden\library\bin\Debug\net9.0\haden.library.deps.json
+C:\ame\aiventure\aiventure-github\aiventure-haden\library\bin\Debug\net9.0\haden.library.dll
+C:\ame\aiventure\aiventure-github\aiventure-haden\library\bin\Debug\net9.0\haden.library.pdb
+C:\ame\aiventure\aiventure-github\aiventure-haden\library\obj\Debug\net9.0\haden.library.dll
+C:\ame\aiventure\aiventure-github\aiventure-haden\library\obj\Debug\net9.0\refint\haden.library.dll
+C:\ame\aiventure\aiventure-github\aiventure-haden\library\obj\Debug\net9.0\haden.library.pdb
+C:\ame\aiventure\aiventure-github\aiventure-haden\library\obj\Debug\net9.0\ref\haden.library.dll
