@@ -436,4 +436,4 @@ Project notes and thoughts for Haden controller, an autonomous search program ex
 	2058: Not so much done. How can we use this if off Windows and Framework?
 	2134: A novel version containing just the parts from the HadenControlForm. How to run is up to you.
 	2218: As much code is brought-in as necessary for a clean-break approach.
-	
+	2235: Now ready to groom Program.cs to suit the new scenario.
