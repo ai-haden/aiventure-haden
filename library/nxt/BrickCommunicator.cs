@@ -1,7 +1,6 @@
 using System;
 using System.IO.Ports;
 using System.Text;
-using System.Windows.Forms;
 using Haden.NxtSharp.Brick;
 using Haden.NxtSharp.Command;
 using Haden.NxtSharp.Exceptions;

@@ -362,57 +362,6 @@ namespace Haden.NxtSharp.Utilties
 
         #endregion
 
-        #region Graphics
-
-        /// <summary>
-        /// Draws the thick.
-        /// </summary>
-        /// <param name="g">The g.</param>
-        /// <param name="s">The s.</param>
-        /// <param name="outerBrush">The outer brush.</param>
-        /// <param name="innerBrush">The inner brush.</param>
-        /// <param name="f">The f.</param>
-        /// <param name="clipping">The clipping.</param>
-        public static void DrawThick(Graphics g, string s, Brush outerBrush, Brush innerBrush, Font f, RectangleF clipping)
-        {
-            clipping.Offset(1, 0);
-            g.DrawString(s, f, outerBrush, clipping);
-            clipping.Offset(-1, -1);
-            g.DrawString(s, f, outerBrush, clipping);
-            clipping.Offset(-1, 1);
-            g.DrawString(s, f, outerBrush, clipping);
-            clipping.Offset(1, 1);
-            g.DrawString(s, f, outerBrush, clipping);
-            clipping.Offset(0, -1);
-            g.DrawString(s, f, innerBrush, clipping);
-        }
-        /// <summary>
-        /// Draws the thick.
-        /// </summary>
-        /// <param name="g">The g.</param>
-        /// <param name="s">The s.</param>
-        /// <param name="outerBrush">The outer brush.</param>
-        /// <param name="innerBrush">The inner brush.</param>
-        /// <param name="f">The f.</param>
-        /// <param name="x">The x.</param>
-        /// <param name="y">The y.</param>
-        public static void DrawThick(Graphics g, string s, Brush outerBrush, Brush innerBrush, Font f, int x, int y)
-        {
-            RectangleF clipping = new RectangleF(x, y, g.ClipBounds.Width, g.ClipBounds.Height);
-            DrawThick(g, s, outerBrush, innerBrush, f, clipping);
-        }
-        /// <summary>
-        /// Pointses to millimeter.
-        /// </summary>
-        /// <param name="points">The points.</param>
-        /// <returns></returns>
-        public static float PointsToMillimeter(float points)
-        {
-            return points * 25.41f / 72.0f;
-        }
-
-        #endregion
-
         #region Data
 
         /// <summary>
