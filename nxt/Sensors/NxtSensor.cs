@@ -5,7 +5,7 @@ using Haden.NxtSharp.Utilties;
 
 namespace Haden.NxtSharp.Sensors
 {
-    public partial class NxtSensor : Component
+    public static class NxtSensor
     {
         int _autoPollDelay = 100;
         /// <summary>
@@ -28,12 +28,10 @@ namespace Haden.NxtSharp.Sensors
         /// <summary>
         /// The brick this sensor is connected to.
         /// </summary>
-        [Category("Lego NXT"), Description("The brick this sensor is connected to.")]
         public NxtBrick Brick { get; set; }
         /// <summary>
         /// The port this sensor is connected to
         /// </summary>
-        [Category("Lego NXT"), Description("The port this sensor is connected to.")]
         public NxtSensorPort Port
         {
             get
@@ -63,14 +61,12 @@ namespace Haden.NxtSharp.Sensors
         /// 
         /// NOTE: The AutoPoll property must also be set on the brick Component.
         /// </summary>
-        [Category("Lego NXT"), Description("When AutoPoll is set, the NxtBrick will continuously poll the state of the sensor. How often this is done is controlled by the AutoPollDelay property.\r\n\r\nNOTE: The AutoPoll property must also be set on the brick Component.")]
         public bool AutoPoll { get; set; }
         /// <summary>
         /// Delay between sensor polls. 0 = as often as possible.
         /// 
         /// NOTE: The AutoPoll property must be set for this property to have any effect
         /// </summary>
-        [Category("Lego NXT"), Description("Delay between sensor polls. 0 = as often as possible.\r\n\r\nNOTE: The AutoPoll property must be set for this property to have any effect.")]
         public int AutoPollDelay { get { return _autoPollDelay; } set { _autoPollDelay = value; } }
 
         /// <summary>
@@ -124,7 +120,6 @@ namespace Haden.NxtSharp.Sensors
         /// <summary>
         /// Override this to set the sensor type.
         /// </summary>
-        [Browsable(false)]
         protected virtual NxtSensorType Type
         {
             get
@@ -135,7 +130,6 @@ namespace Haden.NxtSharp.Sensors
         /// <summary>
         /// Override this to set the sensor mode.
         /// </summary>
-        [Browsable(false)]
         protected virtual NxtSensorMode Mode { get { return NxtSensorMode.Raw; } }
         /// <summary>
         /// Override this to define the sensor threshold.
