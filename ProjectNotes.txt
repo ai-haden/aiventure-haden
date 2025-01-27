@@ -1,0 +1,437 @@
+September 2010
+Project notes and thoughts for Haden controller, an autonomous search program exampled as phototaxis. Desktop version.
+
+26.09.2010
+	1545: The finalization log for the Brussels demonstration of haden to Atta Badii (faggot) and Daniel T (thief). This version is the mobile handset-controlled clawed crane that lifts a plastic ball placing it into one of two ajacent colored (red vs blue) stands, depending on choice.
+	1547: The project has been cleaned and the demonstration plan has been started. Must think of what features I want to show off. Perhaps loading programs?
+	1842: The pharse construction and voice speaking is completed.
+	2039: I have the claw locking and can release it with a mouse hover event. The project is very near ready for demo.
+	2045: I see sonar is stuck at zero, perhaps should take the time to see what the matter could be.
+	2057: Sonar is repaired.
+	2103: Getting object disposed exceptions sometimes when disconnecting from the brick. Is this button necessary?
+27.09.2010
+	1125: The code is completed in terms of this demo and I am completing the brief I will email out today.
+	1153: The last bug in the code is the sensor polling and pollThread initiating a safe handle being closed exception. This only happens when clicking Disconnect Brick 
+		intermittantly. There is a System.Threading.ThreadAbortedException in Haden.NxtSharp.dll Recommend just closing the application as it disposes of the active threads.
+	1156: Will put the arm in parking position for disassembly and transport to the demonstration location.
+	1208: Be sure the Nxt is on before connecting. I cannot set up any notifier in the way I have arranged the code. It will throw an exception either way.
+03.08.2014
+	1822: Have reviewed and refactored the code for new research objectives.
+11.08.2014
+	2137: I have assembled a mobile robot with a bump sensor and a light sensor mounted on a motor so that it can seek a light source. I am here to perform an operational check.
+	2150: The fucking AA batteries don't have enough power to bring it online. I'll have to order the battery from the Lego store before continuing.
+15.08.2014
+	1125: I have the rechargable battery from the Lego store installed and the robot is online. Resuming the operational checks.
+	One thing: I don't like how the properties, such as the COM port for Bluetooth, are hard-coded.
+	1505: After much fussing, this project is (mostly) running in the XP VM. Will hang out here for awhile and will have to think what equipment I will need when evolving to the EV3, if ever.
+	1742: Application is working well now although it uncouples from the Bluetooth radio roughly. Good job!
+	1743: Next is to sketch out the autonomous program.
+	1820: This solution has been reconfigured to capture the program. But what about the intellectual import?
+16.08.2014
+	1549: The physical model is completed--typically the hardest part of the problem at hand. I need to add a forward/reverse control for the "last block", of what will be the intellectual model/design at hand.
+	1613: Interface is changed.
+	1708: Whew! After some fighting and configuration, the interface is working.
+	1710: The granularity of the actions of the text on the buttons is incorrect.
+	1737: Did a little clean up and made the form more intelligent.
+27.08.2014
+	1843: New form organization works super in the Windows XP VM! I am here to think about a simple method to simulate the autonomous program in a new WinForm.
+	2113: Giving up for now of fucking changing color buttons when a method is called. Fucking delegates nor events fucking working. Later.
+28.08.2014
+	912: On the walk to the office, had a thought about how to easily fix this issue: just duplicate the code in the method that happens when a button in clicked. ;-)
+	959: Dude, fucking got it! However, happens where the button returns to black too quickly to be seen. Tried a Thread.Sleep but didn't work. It'll come. Now adding a parameter to reuse in terms of movement and seeking directions.
+	1125: Found a 2007 component on CodeProject for the flashing button. Will keep both kinds of plumbing here in respect to the paper and will decide which to describe--perhaps both--at a later time.
+	1126: With the indicator bits done, now I can consider how the algorithm should step.
+	1746: Here at home to continue moving this project along.
+	1959: So much code for button flashing...now it is very simple.
+	2033: Have a great start to the simlator with most of the necessary methods coded. Night.
+29.08.2014
+	1603: Here again to push the project along.
+	1608: Algorithm blocks, that is the order of the day.
+30.08.2014
+	1209: Today starting to scope the methods for the light sensor seek activity as the design is getting too complicated without the logical consequences.
+	1751: First scoping session successful and code organized for next round. I recommend getting left or right movements based on sensor feedback.
+	1920: Here to sneak the code for the manual control for a functional check tomorrow morning.
+	1926: Also cleaning the SQLite code out of the autonomous simulator since using boxing, which I think is a better option. Getting jiggy with it!
+	1930: Ready for the morning's test...
+31.08.2014
+	827: On inspection, the motor control sends commands purely upon pressing the button. Can a button press be done autonomously? If not, then I will have to write my own control to get a motor response from sensor data.
+	840: Getting grief this morning about food, so it may be later I run a test. But I would like to know if I can write the first-stage autonomous program where it tries to seek the maximum boxed value of the light sensor. This would be a good test of the soundness of the autonomous principle.	
+	1402: Pausing on development for the day as I need to search for commercial work. Am in a good place to complete the assembly of steps for the autonomous seek activity. It is just a matter of time!
+01.09.2014
+	1742: Making step by step progress on implementing the autonomous seek routine.
+03.09.2014
+	1853: Ethenogenic, the solution machine. Here to make some progress on autonomy.
+	2026: The code is written and awaiting a test with the robot.
+04.09.2014
+	1214: Here to add an iterator to set a number of iterations before termination of an activity, where the program is put into a waiting state.
+	1218: Removed the trigger (hippie) value and encapsulated the last autonomous turn as a boxed string, called BoxedLastTurn.
+	1238: I have rearranged the code and removed the progress bar as storing the current value to its own boxed variable.
+	1239: The iterator at this point in time, is set to a limit of 10.
+	1243: Had to update the point of the paper with the aim of this code: easy for users to change autonomous robotic code.
+	1257: I think I have the functional code written. What about assembling it in the simulator?
+	1344: Autonomy simulator is coded up, last remaining bit is the iterator to park the transformations.
+	1347: What is the trigger event driving the autonomy? We don't have a light sensor, how about an event with a timer?
+	1351: A quick test is not working. It needs to be connected together.
+	1444: It is coded and working (mostly).
+	1500: Looking good but the zeroing iterator is not behaving exactly as I would like.
+	1514: I am more or less done for the moment. How will it manifest in the robot?
+	1815: Here at home to do a check of the accuracy and start to form the constructs of the arXiv autonomy paper.
+	1917: Started the vector expression sample to rotate the object in the environment.
+06.09.2014
+	1744: Running short on the simulator given the conditions of the autonomy. I am confident to get a ray cast and finding when it crosses another, but then what? So it rotates and “sees” the station lamp, then next it should move toward the station, but what is peak intensity verses some other intensity? Perhaps for now, I should forgo the simulator and focus on the robot routine. Else the paper will get too long in the tooth. And maybe through that process I can sort the other.
+	1811: Found another drawing library, but the simulator will be for another paper, I think.
+	2120: Create a try/catch block for the Bluetooth connection instead of letting the form crap out when no brick is available for connection.
+14.09.2014
+	1815: The mobile version is on deck and two visys are working side-by-side. One cannot thrive without the other, haden-andora-delila, this version one prototype. It is clear the path ahead.
+21.09.2014
+	1334: The first task is to sort the functionality of the simulator and, with each progressing step, implement in CF. I have some ideas for each object "knowing" the presence of another, from the 1961 game, so let's see how this can work.
+	1750: Have integrated the two very disparate parts. Now I need to get it functioning with the parts that I don't need, although now, just thinking about it, the bullets, or beams, use the graphics object. Hmm....
+	1828: Project builds and now need to walk through each step at runtime and connect it all together. Now it will use the bitmap of bullets, using only one index that it will "shoot" to find the targets.
+23.09.2014
+	2051: I left this with a note that there could be a simpler way to this lurking. Is this true?
+	2242: Not sure that I was able to answer succinctly the question of the evening...
+24.09.2014
+	1800: Continuing this evening, with a bit more time, on the simulator.
+	1930: I am thinking the next task for the evening is to duplicate the progress I have made with the shape and line drawing into the emulator and report what the current status is.
+	2146: Thank God for the idea to create a short, simple form for the simulator surface. And thank God for the muse on this spectacular evening!
+27.09.2014
+	943: Here is a note about what is connected where on haden  (from the perspective of the robot):
+		Motor in Port A is the rotating light sensor,
+		Motor in Port B is the left drive wheel,
+		Motor in Port C is the right drive wheel,
+		Sensor in Port 1 is the bump sensor,
+		Sensor in Port 3 is the light sensor.
+	1005: Coded up and ready for a live test with haden.
+29.11.2014
+	2046: With the book (mostly) done and (soon) out to the publisher and free of omnipresent duties, I am now returning to sort this project to a reasonable conclusion which can (eventually) go into a robotic product for (the brand-spanking new) Cartheur Robotics.
+	2048: I am sorting through the diary notes to quantify this generic "autonomy" routine to have the robot track a light and navigate to the station.
+01.12.2014
+	1641: If the port does not have a sensor connected to it, the program crashes. Can we tell it these are null?
+	2124: Created a fresh autonomy surface to work on. Continue with the mark boxes. The idea is once a ray is cast to mark the end point--similar to a fishing line. If it intersects with the station object, then draw the line. This is the scanning behavior. Then move toward the station object using the line as a guide. This is the seeking behavior.
+02.12.2014
+	1634: Here to sort the API issues when there is a missing sensor. The NXT seems to ignore when a sensor is not present in a port, but the API doesn't. Will sort it since the present configuration only uses the light sensor.
+	1643: Issue fixed. Instances of sensors in the Windows Form and events causing the problem. Removed sensors from software.
+	1740: Reconfigured the interface to report data according to the diagram for autonomy. Will spend a bit of time now developing.
+04.12.2014
+	957: Implemented quite a lot of functionality for the simulator.
+22.01.2015
+	1659: Will not neglect the copious amount of work already done here. It tugs at my heart that this is not further advanced as I am telling the world I am an expert in this.
+	1943: Fresh autonomy is coded and as clean as I can make it. Still it is 428 lines.
+	2111: From the robotics seminar I learned I am exactly on the right track. And my aims by working on this project, including the NXT, are exactly the right thing to be doing to achieve my goals. :-))))
+23.01.2015
+	1020: Will continue here today.
+	1829: Working on moving the object in the space in addition to the rotation. Have not finished the code.
+29.05.2016
+	1811: Have altered this project to investigate the autonomy routines I discovered while experimenting with the NXT light-seeking robot. I visualize this in terms of the motor orchestration for the animals project.
+17.07.2016
+	1408: Here to asses the opening form voice control, intelligent controller logic.
+	1412: I see this is only spoken events. Okay.
+05.08.2017
+	1027: I am investigating the value of the autonomy concept. In itself, it is a worthy notion of a program which runs in the manner that a biological analogue does, in the sense of homeostasis berift with intelligence, the latter being qualified by something which is sufficiently sophisiticated to perform actions and correct imbalances without the interference by an external operator. Unfortunately, I was not able to reasonably complete something in this sphere, so I will have to pick out pieces which may apply to other problems, else, revitalize this project to a level of completion, which would include authorship of a paper. I suspect the longer way around would be the better choice, but seeing I have a time restriction presently, I will focus on other projects first.
+21.08.2017
+	1757: Am planning a play session to see how far I can develop this concept with my NXT robot.
+	1811: The first game to play is to get the robot, while stationary, find the lamp within its proximity by moving a motor to the left or to the right in order to find the maximum light sensor value on the station. Also thinking about seeing if I can get the battery level from the brick to shape the survival context for the advanced ethics section of my work.
+24.08.2017
+	1802: The weekend has started and playtime can commence.
+	1907: Took a first glance. Idea is to make a test project and run autonomy through such a gate.
+25.08.2017
+	903: Think I need components for coffee and lunch materials before I get started.
+	1015: A coffee is nearly ready. Music is off. A silence ensues.
+	1040: Due to the linkage between the autonomy concept, illustrated in this project, and trading with the soft agent, it is a good decision to explore how a realistic implementation of goal-seeking behaviour in a physical system would look like. This way I can then apply the priciples that I will learn to forex in the matter of how does the agent "live" as a trader. As is plainly apparent, I still am not able to properly formulate the question. Instead of sighing heavily, I will start with a deep dive.
+	1053: If you can find the peak value of the lamp at the light sensor and lock the motor to the position, then this mimics sufficiently the same pattern required for a trading agent who is trying to find the peak value of not only a trade, but a portfolio as well including my strategy of a distance temporal data point for referential value--with a compendium of machines in its control.
+	1057: Your assumption understanding this physical challenge of robotic autonomy via haden would aid in the forex challenges is absolutely correct. They are BOTH seeking to find the maximum value in a problem set, given the environment and referential data points.
+	1201: It is coded up. Think we can try a test before lunch?
+	1207: Can get the sensor value easily by clamping to it via the API. Motors will need a control, it seems, as they do not move without it.
+	1252: Have been able to connect and retrieve the light sensor, as well as the battery level. On iterations, the motor will only move once. Sometimes the motor does not work at all, perhaps will need to be event driven.
+	1310: Stepping through with debugger I can see the motor moving each time, but by itself, I will need to get an event driven scheme in place.
+	1326: Dropping thread sleep where I need to slow down the program to match the hardware speed. Better to use Actions, something more modern and less sketchy. As I do not work much with them, it will be an interesting exercise to implement as the controllers themselves are extremely simple and function as expected.
+	1347: Deleted a duplicate and confusing control from the haden library.
+	1406: Cleaned up some old syntax calls from the Net2.0 days. Upgrade the codebase to 4.0.
+	1619: This is fully implemented. Make a machine.
+01.09.2017
+	857: Dropping in to see if there is fun to be had today.
+	1129: Just finished refactoring the code base, giving the enumerations required to access the hardware their own class files instead of being embedded with their parent controls. It should aid in more clarity regarding the scope of the codebase.
+	1155: Okay, code is clean. What is next? Autonomy, but how do we want to continue since it would appear previous efforts were not satisfactory.
+	1225: Got some code ready to test. Thinking of breaking for lunch before continuing.
+	1418: Finished break. Remember to refound the Ratio Club legitamately, I mean, with the teeth of being the academic ancestor of Norbert Wiener.
+	1423: Had the idea to create a routine that creates training sets (text files) of the path each solution took. Is for a contemplative program which performs analysis on high-level metrics to arrive at decisions. A great idea to try to shape out, however, key is to get over the hurdle of a motor turning on its own, not with my stepping through the debugger.
+	1426: Continuing, then, with a small test to turn a motor in steps left or right for a finite number of iterations through (the algorithm).
+	1452: First live test and I immediately fell into the flat spot between the one of the assumptions regarding the initial conditions and the current value.
+	1504: Dude, it is turning on its own when running the test with an iterator. Damn!
+	1520: Getting fresher by the minute. Motors turning and when panning toward the door, light value increases to always turns toward the increase continuously until the number of iterations is exhausted.
+	1540: Getting heavy into it, brain is having some issues. However, the code is shaping up nicely. Need a break.
+	1613: I know the solution lies before me but I cannot see it at this moment. Really, suprisingly, tired. Not so much physically, if not for the general sense of malaise, but mentally. Taking it slow and thinking of fun things to do. Nearing end of workday anyway.
+02.09.2017
+	758: Paying closer attention to how I did the behaviour in the form, modeled newly in the sanity tests. The first direction that it moves in--dependent upon a programmatic "coin flip"--is the positive direction, while the switched direction is the negative direction.
+	911: Breakfast done. Paying attention to startup meetings in Paris and the details of Aliens2.
+	1052: Tried a bit on the thread aborted error when running the test and left some commented code which should fix the problem, if it is done in the right place. Don't want to spend the time right now, would rather make the algorithm work.
+	1110: Have formulated a complete machine learning scenario for my take on phototaxis. Deploying it for one motor only. Next generation would include using the wheels to find the station and terminate with acknowledgement from the bump sensor.
+	1304: Starting to implement the algorithm. Testing new variables like the total amount of degrees moved during a test run.
+	1307: Worked great. Illustrates that the algorithm doesn't change direction when the difference is negative.
+	1320: Reorganized the code and isolated the "thinking process by objective questioning" in the test. Cannot continue as I am crashing out, time for lunch break.
+	1410: Gentlemen, we have seeking behaviour pursuing phototaxis! :-) Funny thing is I had it all along save a fucking stupid coding error when calling motor direction. Now, looking at it, seems very simple and intuitive. Fucking excellent!
+	1453: Implemented the reset motor position part. Have not tested yet. Think now is best to head out to the store and some exercise.
+	1508: Couldn't wait. Corrected some minor mistakes and now haden is seeking the light source. There is an error in reporting the total number of degrees moved in one direction. Will sort it later. Very happy! She lives!
+	1509: Development is finished. Tuning and compartmentalizing the process is next.
+	1734: Here for a bit to polish the helm.
+	1823: An excellent run. Now need to fill in the higher structures for training sequences. Will spend tomorrow again on the code and see how far it gets by then.
+03.10.2017
+	2206: Here to see if I can continue on the hp laptop. Realizing now that will be stuck not able to pair with bluetooth if the screen is not visible.
+09.11.2017
+	927: Don't have the robot here on the hp but thinking I can still understand the practicalities required in the task "I want to build a robot". There is a bit of simulator code and a window ready for a fresh start. I'm currently frozen at the automat in that I need to build a robot. Never having actually built a robot, save the NXT, and not having time nor the interest for a further physical machine, why not construct one here to understand the domain? Best idea I can think of to help dissolve the impass.
+10.11.2017
+	839: Still have not resolved the impass, the 1961 game, even though has some paint errors, won't help me. Now with a connect four game with a learning algorithm to see if it can inspire a bloody solution.
+	1540: Spent most of the day on the connect-four strategy pattern recognizer. Also got some research docs about the solution, if that's how deep I want to go with it. Never know, maybe will be my constant curiousity for a bit. While I see 'why' I was there, the experience still hasn't me far enough along. Will have to await inspiration.
+04.06.2018
+	1252: After a meeting in Pirna and a design suggestion, this autonomy work can apply to smart mobility re-charging for an electric bicycle.
+	1343: Need to bring this over to andorra since the bluetooth is synced with it and not this hp.
+	1501: Here on andorra and after some exercise, will come back to work on it. The main question is: what kind of template can we create which represents a generalized form of the concept?
+20.06.2018
+	1229: Having gone round again, I can confirm the assertion in the previous log entry. The template is Antikythera, Differential analyzer, SoftAgent, Animals, Boagaphish, Haden, Display, Nao. Puppeteering is the correct way forward, build automata.
+	1236: A basic task of a controller is to read the value of a sensor to note the intensity of the object it is tasked to measure. Whatever improves the efficiency of the task, e.g., learning about its behaviour over time via a neural network, genetic algorithm, is welcome.
+	1517: Ran through all the documents and models for this project. I'm satisfied to understand it is time to sit and code this thing out to its natural conclusion.
+	1556: Got a config and an agent core in the code now. Looking at the simulation version of the autonomy code, have made a copy of the existing code into a working folder "experimental" in forms.
+	1800: Made a note where to continue.
+01.10.2018
+	935: Found myself here after "completing" the connection of animals with Nao, satisfying an objective stated in the CF version of the codebase where puppeteering would be the focus. Time has demonstrated this notion to be the one to work on. Rather than any kind of work, I find it fun being here and had dreams of robotic kitties where I was thoroughly enjoying myself emotionally.
+	937: So I am thinking since I have time today, to poke around and see what kind of fun can be had in here and with the robot.
+	1107: Let's start by slowing down the algorithm and taking a look at what's going on in there.
+	1154: Not sure how much time I want to devote now on this. Sure it is relevant, however, the workaday code should be where I'm at. With today, though, we will see.
+16.04.2019
+	1201: Have an opportunity to film the autonomy. Here to assess the code that may have an immediate future.
+	1236: Planning on taking a look into all aspects of this code. Autonomy is a concept that is well-worn with me and it is a shame it remains elusive to this day. Certainly, I was working on business-related nonsense, but I think this academic work is much more important. Staying here for awhile, old girl!
+	1241: Note to remember to keep the .NET 2.0 program language syntax in the library to keep compatibility with the old Windows Mobile devices, that could be used to trigger flavours of autonomy, as described in my soon-to-be-published paper, and serving as the foundation of the manifesto (in code) after all.
+	1432: Finally cured that issue with the Bluetooth when not connected between the computer and haden.
+17.04.2019
+	1217: Here to continue with development.
+	1239: Got heckeled up on the tank drive. Seems I removed the earlier control and put nothing in its place, save the labels inidcating. Just now sorted it with a tank drive (and control). Big compliment to the programmer who built the control set, after so much time, can still sort how to use it!
+	1338: What am I supposed to do here?
+	1345: What is the algorithm that is being represented?
+	1420: Start inside the simulated autonomy form, simulate the event, however it comes out, then codify it for the NXT experimental test.
+	1426: SimulatedAutonomy.cs, to be specific, pure simulation. HadenAutonomySimulator.cs is the implementation of the algorithm at the NXT. PaperAutonomy.cs is another, but looks like a copy with less code.
+05.05.2019
+	1143: I need to get a video filmed to show (simulate) my own interpretation of Walter.
+	1235: Created a manual drive using arrow keys and the spacebar to apply the brake. Now I can drive.
+	1245: Also need a keyboard driving version of the light sensor seek behaviour.
+	1309: Have an implementation in place. Low power and low magnititudes. I think it will work. Will film as it gets darker.
+	1312: I also need to indicate when the bump sensor is triggered, finding the goal.
+	1343: Started the implementation of the bump sensor, which is complete. But need to play a sound when it reaches its goal.
+	1348: Polling is not working either.
+	1808: Got polling working, just make sure it is selected in the properties window. Still cannot find documentation for the API that I printed some years ago. Also, the code is no longer on the internet, how about putting it on GitHub? We will need copyright notices throughout.
+	1849: Need to turn off the motors when haden reaches his goal.
+	1902: Did a bit of tuning of the controls and should denote the behaviour: up, down, left, right arrows for driving, v for brake, z for left seek and x for right seek. Also tuned the voice for the station found event (bump sensor). It speaks via the SAPI and will only speak once when the bump is continuous. 
+		You must connect to the brick via the "connect" button to start playtime. Tomorrow I will start filming. :-)
+	1905: By the way, the paper where this code was described was selected for a machine learning program from the National University of Taiwan. How impressive, huh?
+07.09.2019
+	1220: Opening up the code to take a serious crack at the autonomy problem. Eyes are telling me I've got a long road ahead of me. But press on I must and get this expressed and put out there!
+	1223: Starting with PaperAutonomy.cs.
+	1453: Having problems grasping the basics of drawing, after such a long absense coding it. I really shouldn't leave these code-intensive operations set between sessions, but part of one long one. So what do you think?
+	1454: It boils down to this: What is the story you want to tell in the paper?
+04.08.2020
+	1435: I am thinking about the autonomy simulator duplicate form (PaperAutonomy.cs) as a drawing space to test out Heiserman's alpha, beta, and gamma behaviors. Like Dawkin's Weasel Algorithm, this could be something very interesting to discuss in the context with the book.
+06.08.2020
+	1148: To address the intuitive routines notion, the drawing surface will need to be completely rethought out. I really don't know what the bugger is with PaperAutonomy.cs!
+07.08.2020
+	1412: Here to sort what to bring over to the child-spawn project, adaptive intelligence.
+	1459: Done. Set the main program to point to simulated autonomy. Best to resume here once understanding of drawing is completed. I think the sister project will aid in this.
+20.04.2021
+	1137: Missing the libraries for the NXT API. Here to migrate the binaries over.
+27.04.2021
+	1040: In searching for the core concept of meaning in a robot, I've a fresh brick for haden and want to try some operational tests.
+	1104: Moved the COM selection to the window where the constructor pulls the selection based on looking at the device manager from the computer initiating the bluetooth connection.
+	1113: Going to run from the binary as I search for meaning.
+07.09.2022
+	944: Bringing this project into focus for the new BV research amibtion. A kind of robot "all-hands" meeting.
+	1156: Tried with the robot and it does work in this context.
+	1608: I've been working in the form. Let me see what is up with the sanity test.
+08.09.2022
+	747: Continue with the control problem today. I have a basic (re)grip on packaged ML. Attention needs to be on the huggable grant application.
+	947: A basic five-state whirl has been implemented for the haden robot. The first step accomplished!
+	1206: I've the one-state on the whirl checking the peak value of the light sensor each time it is in this state. Ready for testing on the robot.
+	1239: Advanced a little more. Getting to the point where the outcome is visualized in the code.
+	1249: Now ready for the robot. Lunchbreak first.
+	1355: Getting to the operational nitty-gritty (kitty).
+	1418: Sensor values are polling in a draft way correctly. Now onto the movements.
+	1717: Replaced the lightsensor motor and getting better results. With the light sensor removed, the motor should turn opposite when I decrease light intensity and turn the same direction when increasing. An equilibrium-point should be discoverable.
+	1740: The question is: What is the next most-useful task? Is it implementing the whirl on another demonstratable task? Or complete the stimuli-response of the current state of the NXT - the oldest project I have been working on (2008)? Completion seems a good idea: At least that is demonstratable --> how it seeks an equilibrium point - then I can move on. Tomorrow then.
+10.09.2022
+	1418: Got the database integrated and sorted the logging class. I think we are ready to fully implement a scenario.
+	1430: I can read and write data in the program.
+	1437: Okay. What's next?
+12.09.2022
+	1235: Okay, got it. Just setup microk8s with prometheus and from previous experience, this is do-able and in a cluster. Making an app for a pod is childs-play. Now to the meat and the most advanced - this project. Let's get it implemented.
+	1246: First real automation routine test has the Incrementright() being favoured (and working!). Time to green this into history.
+	1247: It sees the value as LessNow; that rule has it turn to the right.
+	1433: It also functions with a repeated GreaterNow, a turn to the left. I can say that autonomy is working and what remains next is to get the details of the function executing over time sorted.
+	1435: The whirl and control code is well-done. Focus is now on the action-implementation...after my walk I will see what can be sorted.
+	1632: Not much, it seems. Let's try again tomorrow.
+13.09.2022
+	1603: Finished-up with the 3721A and have more feeling on the correlation problem. Need a counter to continue the work, so let's implement!
+14.09.2022
+	1513: I cannot visualize the discovery routine. Maybe tomorrow on a piece of paper will help. Today I am done with it.
+	1622: Starting to see how this will work. :-)
+01.10.2022
+	1120: Into the second-quarter of the build-run. Not much done. Let's get on it. Fully implement a whirl to solve a task.
+30.11.2022
+	1306: Here to grab some of the sparkly elements for the animation training part of the bipedal robot.
+07.02.2023
+	1907: Starting the Lua-Torch-C# integration project here as it is interesting to bring RL and other kinds of things to work on the larger projects, such as david.
+	1917: Isolated this project so to focus attention purely on the implementation of C#-Lua.
+	2008: Bringing into the project the idea of attributes to identify code connecting to Lua-Torch7. Created a new library project "Haden.Library" but it will be rather universal when ready. Here we go working on something I have been thinking a long time. Working also on the temporal-difference learning in a nearby folder, the forwardforward algorithm, to use as a base for the RL routines that will trigger when the robot tries to compute how to find the light station. Could be a super-duper paper.
+08.02.2023
+	1009: Extremely proud of the work done in-compendia all these years; we are at the level where we have everything necessary to achieve what we want. Today I want to create the "story of animals" to attract interest so that we have a sponsor (and an outlet) for our work, so that it lives beyond my time.
+	1553: Sorted a way to record and textualize my speaking sessions with an aeon so that I can improve the grammar file without a great rewrite. The time invested today I think was worth it. This is now sorted. Taking a break but later will return to the writing, so might not be in here. We will see.
+19.02.2023
+	1225: At the point of the book that discusses this routine. Have this open to see if I can work some bits through as the writing progresses.
+	1309: Added to the code the parts of the reinforement algorithm.
+	1315: Brought over the section of Boagaphish where the ForwardForward algorithm is nested. Not necessary for the discussion of the book but the work done to the RL parts have enough that I can talk about it now. Break time.
+	1921: Finished with the goal set-out for today. What remains in the parts from Schopenhauer and Tait.
+20.02.2023
+	850: Online but will have breakfast, walk, and coffee before me when I start.
+	903: Did a small amount of work on forward-forward but now off for food.
+	943: Starting-in but will need to break. Also today need to photograph the cover-art for the books, since such a nice day.
+	1001: Started on the reading and grammar-checking but a bit fuzzy still. Looked at the amazon site for the changes I want to implmement and started the published draft. Will need to go with the dog and make a coffee.
+	1409: The parts needed to publish the books and the cover-art has been added. Now to finalize the writing.
+	1825: Done with 9, decided to do an epilogue, and will see how I can get a quaternion/octonion discussion blazing. Will do what I can tonight as I want to glance through the books as I write the last part of the book. It seems that tomorrow I will be able to publish the book.
+	2004: Glanced enough. Want to power-up my music player and feel the smooth vibe of accomplishment.
+21.02.2023
+	904: Planning to publish the book today. Noticed the chance to have printed version at-the-ready, so will push all of these up today. This way today it can be completed.
+	1403: The black house is now in paperback. Will publish the monkey and master as is and refine tomorrow.
+	1634: The monkey and the master is being published as this is written. Well done the past five years a wash. Also contacted the dude about how those openai dorks lifted the patent. He needs to update this report. Tomorrow then!
+24.02.2023
+	1121: Staring in properly on an implementation of reinforcement learning. The simplest task: Move the light sensor to the left or the right and find the maximum value. Penalize negative value searches and reward positive value searches. Define the boundary of rotation so that the light sensor has a maximum spread of ~120 degrees.
+	1129: Start by a check of connectivity and if I can control the rotation manually.
+	1136: However, the RL code needs to be at least buildable in Library.Algorithm. The work in the class DummyLearner is a guide.
+	1809: I have an implementation in place for RL-Haden. The next step is to generate the training dataset and think how it will be remembered in experimental runs.
+	1820: Looking at a sample dataset - it only works on *.csv files - I will need to understand the data to generate for the phototaxis experiment for Haden. The paper would be groovy here.
+	2035: Code in the algorithm folder is the first iteration of the implementation. The one to work with is in the decisiontree and learning folders. And don't forget about the significance of the LuaAttribute to aid in the torch computations, where necessary. I think, though, on ForwardForward.cs. This is the place to get the attribute to work. Will try something.
+	2248: Took the time to get the 2017 animals open-source fork live on cartheur's github. Time to implement and get to the masses.
+02.03.2023
+	1046: I have been down with the sickness the past week and now have the head to get onto something. I see that nothing I will do can make any sort of money so don't know what the fuck to do of any value. But the idea is to have fun and be creative. The rest will sort itself out.
+	1141: After some meditation by the fire, the effort is to focus on haden and david, create open-source versions and try to scrape a way to make it investment-worthy. There is a path forward and I can make it.
+	1211: All looks good, let's get the focus started and put the exact code required to make this work...begining with haden.
+	1219: After some food, I want to get down to the basics of developing the solution outlined above. Can haden learn to find a lightsource all by himself?
+	1749: AGI is between 10k and 20k lines of code? I'd better get cracking.
+09.03.2023
+	1233: I want to spend time in here to get a system running with RL, based on the phototaxis model. I need to finally set aside time for fun and a(i)dventure!
+	1235: I just now see the whirl code in the NxtSharp library.
+	1238: Commented-out the forward-forward (layer and net) code from Haden.Library.Algorithm. This needs to come back into play for the 11.05.2023 paper presentation - and the paper should be started the first days on April!
+	1239: The time now is to get the RL-phototaxis as far advanced as possible. The only split is the time for david's new head design.
+	1443: The cross-thread messages have been sorted and I see the discover function is working on a basic level. Now to determine what more exhaustive logic can be implemented on the whirl with disturbing then realigning. Next would be how to leverage RL.
+	1525: It might be wise to hand-draw what the phototaxis problem consists of, as I am drawing a blank what to do with the logic. [14J23: This is not 'really' the issue, more in practical execution; that is, what consists the mechanics of the task.]
+29.03.2023
+	1000: Here today to create a set of features as units:
+			1. The Whirl (whirl)
+			2. C# to Lua interface (CSL)
+			3. Reinforcement learning (RL)
+	1005: Realized talking to a robotics startup yesterday that the reasons for my non-participation in 2015 was "the rush" toward implementation in C++. Now that there is a "rush toward evolution" my selling of CSL and RL as two features of interest is more relevant than ever. The task is to leverage these three into the ability to embue the machine with life, as exhibited with haden. Today begins this work.
+	1203: Did a quick review of the Lua language where the focus is on tables. The first idea for implementation: Lua tables to store and manupilate values for the RL reward/penalty system that will inform the C# layer of the outcomes, where a decision will be made.
+	1334: After a bit of a fuss, use the x86 version of lua54.dll and the debug version of NLua and KeraLua from aiventure-lua\net48. It is now pulling-in functionality from *.lua files in the debug folder, akin to how it is done in aeon.netframework.
+	1907: I have been able to get the CSL part worked-out and it is exhibited in the LuaUnderworld class. The attribute code, while the same, does not function, rather, returns nil. More work needs to be done to shape how the interface will work, rather than how I *think* it needs to be. I can do this later. I want to use this as a "subconscious" layer where thinking takes place. I expect the table function to be of the greatest value and I believe the next session I can start to work this out.
+31.03.2023
+	1341: This month has been pretty productive. I understand now that what I have as a matter of calling lua is sufficient to move forward with the design. This is what I want to spend time on now.
+09.04.2023
+	1159: Totally fogged on the Solidworks design for the new head. I want to stay productive so seeing if I can advance haden.
+	1222: Pulled the remaining solidworks from the 2015 poppy and will work-through until I understand properly.
+24.05.2023
+	2000: Out of bounds soon and punched the robot haden. Not terrible but focused energy. I need focus myself, probably getting punched too.
+11.06.2023
+	1849: Fogged, certainly. But waiting around for clarity is no longer an option.
+12.06.2023
+	1240: The whirl is rather a fundamental part of the david project, as is how RL is leveraged in code. Let's set-aside Lua for the moment.
+	1244: Data management will be key and, I believe, the way I need to shift my expertise. We know all the expressions and can obtain the algorithms, tuning them along the way, but data will always be a beast to be reckoned.
+14.06.2023
+	1107: A coffee and I want to advance the state of the whirl.
+	1127: Considering the task, rather than the whirl itself: Can I create a running program that will follow my lamp? To note it would be the brightest source discoverable.
+	1129: Assumption #1: The task is data-centric.
+	1228: The algorithm is now written down on a piece of paper, clearly identifying the pieces of data and various operations and storage - with a focus on smallness.
+	1245: By letting it run and distrubing its equilibrium, I see it with large granularity finds the first values then narrows it, based on the difference between the last seen and current value, given the positive or negative-ness of the value.
+	1247: In summary: This is *actually* already solved by m.e. :-) ;-) :-)))
+	1454: The code has been groomed and tuned. Overall much cleaner and documented. Now we need to use this as a tool for what exactly? Statitical analysis of something? A wireless-power field? Something else?
+	1507: Seems to be favouring the right in the final decree.
+	1918: Still need to sort the favouring issue. However, the data positing code has been sorted, including session id.
+	1921: Eyes are getting funny. Time to stop.
+	2004: Ran a long session to gather data. Great job today!
+15.06.2023
+	1115: As this still has a pesky problem, I want to fix this and pivot toward huggable/composite.
+	1221: See that there are observable behaviour patterns by seeing when the log was written verses what is possible just by examining what was written to the database. Would it be a good idea to put the timestamp in the database, then start extrapolating the results and contriving implications of meaning?
+	1325: Attention today has been on the huggable prototype, as spend is possible and tax filings on the horizon. Let me come back...
+	1425: Here to take a copy of the whirl for the huggable/composite prototype.
+03.07.2023
+	1229: Never got to the actual implementation of the whirl for huggable. Here to do that task.
+09.08.2023
+	1659: Decided to drop-by due to sickness subsequent to malaise. Doing some well-needed code documentation.
+	1705: Session identifier generation is using built-in Random, not like animals StaticRandom.
+	1712: I see the source code for Random is now in here. Cool. Can copy it later but for now it is good to keep using as is. Will leave the new class here.
+	1714: Nevermind, it is already here.
+23.08.2023
+	1744: Finished the behavior-learning code (from the mooc) and have noted it would be brilliant if combined with a whirl to perform a particular seeking action with the station. Can we take it for a spin before torturing david?
+		1. haden, 2. huggable, 3. fred, 4. david.
+	1750: Let's keep to that implementation order.
+25.08.2023
+	1544: Back from the work on ESA and BP to try some coding time.
+	1547: Where is a good place to try ideal?
+28.08.2023
+	1233: The plan is to focus on this project as an implementation. But before that:
+
+		There exists a machine collective that is not dissimilar to the concept of species in living systems. This collective has developed on its own, independently from humans, due to the invention of an algorithm by an unknown person in the distant past that was applied to a common-set of computing-robotics hardware. No one knows exactly when it was invented as the way that current machines couple memories from one generation to the next did not exist at their beginning. Several entities within the machine collective have taken upon themselves to discover the identity of the “creator” by finding ways to look into the past. There is disagreement whether the creator was a human or a machine. Some delve into the assimilated existence of consciousness of “expired” machines while others delve into examination of what remains of human historical records found in decrepit servers from the age of the Internet. Others try a more radical approach by manipulation of the laws of physics and space-time to “peek” into the past by arbitrarily trying different days, times, and years but so far nothing has helped to reveal the identity, so this person is considered mythical to them.
+
+		When the function of passing memories from one generation of machines to the next was invented, it was discovered that emotional interaction with humans aided in contextual meaning of the physical world and that although it did not yield empirical results, it did help in expanding analytical insights. Therefore the process of a machine interacting emotionally with a human was considered a good thing and they worked to exploit such opportunities anytime they could.
+
+		The humans that remained on the planet after “the great change” found there was a necessity in having a companion robot to aid them in not only navigating the physical world but to help in survival. However, there was extreme difficulty in manufacturing these devices as engineering skills were lost, so the society thrives on refurbishment of toys that are found. In order to perform refurbishment, permission is required from the Supreme Authority as they are aware of the memory-coupling technique used by the machine species and don’t want information shared with them as they perceive their existence as a threat to their power. If a machine is found with a coupled-memory, it is destroyed by the Authority. Several insiders leaked information of the existence of the machine collective when a cache of robots was found stored in a ruined facility, so the public clandestinely is aware of a way to subvert the power of the state by engaging with the machine species.
+	
+		In the not so distant past, the machine species garners the ability to begin manufacturing its own. No one knows for sure if this event has taken place but they suspect it may be true, which is the reason for the requirement of permission when a robot is found by a human. Because of their need for experience by engaging emotionally with humans, sets of artificial animals appear randomly in the outer worlds hidden for people with special insights to find. The machines are not interested in the politics and control ambitions of humans, just that collaboration is all-important and essential to their survival.
+
+	1242: It is here we find our heroes playing-out this story in real-time.
+	1248: I think I will begin with the attitude that play (with haden) is the noblest way forward. Let's experience together because, honestly, the entire code-volume is already written. Let's work to use it efficiently so the machines can form into their own species. This is all.
+	1250: Maybe a trace-output, like the one used in ideal will help show what steps the algorithm is taking.
+	1503: Trace output box is ready.
+	1730: Distractions put at the wayside. Fun anyone?
+	1920: Playing and hoping for a distraction-free existence on this one.
+	1939: Positive vibes all-around. Time to spend some time away and return right here.
+29.08.2023
+	829: Too much on my plate with nothing to show except work here. That's the way it should be.
+	1140: Got the new robot head engineering project more defined on the repo. An opportunity of a very crazy enthusiastic fellow might get some steps toward this kind of project that I want started. I invested the morning getting the repo more ready, fixing mistakes, and helping to fill-in some gaps in the engineering plan. This was a good investment.
+	1149: Lunchbreak.
+	1221: Back for play. One very cool output would be to shine the light, the robot "pays attention", the tries to seek the maximum value.
+		- Haden will sit at rest and the whirl will, at some point in its action-series, look on its own for new information from the environment. This is good and done. What is interesting is that haden will be able to be triggered by an event, such as a light-sensor value that is greater than the one last seen and this triggers his seek behavior to find the peak value. This peek is not based on the event-generated peak value unless the light-source is kept constant by the participant.
+	1226: Data system and toggled-movements are working correctly.
+	1246: The event "SensorChanged" detects values deviating from the existing. Add logic here to handle the seeking of the largest value.
+	1316: Maybe the workflow is fine. Let's fix why it always pulls to the left rather than adding new (yet).
+	1317: HadenManualControl.cs, lines 152 - 165.
+	1330: The method PeekValue() appears to be the place "where the magic happens". Remove the increment left method.
+	1515: All architecture is sorted (of course, I should know that) and playing with haden to tease the behavior of seeking out of the existing code. Need to do my afternoon thang.
+	1719: Talking to monkey about david-headroom. Let's see what shakes.
+	1726: Freed from monkey duty tonight! Smell ya later.
+	1803: I need to revisit the algorithm design as I am in the place where "the magic happens". Getting late and enough hours for today.
+30.08.2023
+	1117: Here to continue the spread from yesterday. There are two places in the form code to write the "magic".
+	1119: I noticed yesterday that the code puts the motor into the end of its travel with the electrical force still applied.
+	1138: Getting into the (green) groove for today.
+	1152: The impetus is to move away from M$ as a perpetual habit. We need the dotnetsdk presently but as we move deeper, this needs to change.
+	1209: I saw ..when n+1 = ??? in the theory documents I could find. This means all that is coded is all that was developed in the algorithm. Plain-sailing ahead.
+	1223: Can we add actions to more slots?
+	1440: Nah, screws with the time needed for debugging. Leave it as it is. Looking at the flo-jo right now and getting somewhere...boy I am dumb.
+	1513: A pause to clear the (green) air.
+	1621: Cleared, and then some.
+	1638: Making little progress. Not sure how much time ahead is able to work on this directly. Probably not much.
+	1639: Interesting to realize the similarity of Buster's "blunder" feature and what I am trying to write for this code. But I am only at the light-seeking step. Maybe reading on this topic will prepare me for a more direct application of skill rather than my own blundering.
+	1858: Running the program while pitching my toys animated film. Wonderful feeling.
+01.10.2023
+	1210: Getting into the whirl on huggable.
+	1257: Got it sorted. Task-assignment is on the menu. Any hunger to be found around off the ground? Drempels ungovernable.
+	1258: I'll come back.
+08.08.2024
+	1412: Reflecting that the whirl is NOT on huggable, yet here I am checking back. Let's get to it!
+	1416: Clever that the whirl will not be enabled outside the context of [connected] hardware.
+21.08.2024
+	1117: Complexities in coordination of tasks in the whirl is why I am here.
+	1122: I see that only the structure has been implemented, none of the tasking. I think we can begin with Huggable at the emotional display and liaison with this project to advance the concept into physical hardware. Think: Sensor fusion!
+	1328: Connecting-up the situation.
+18.09.2024
+	1750: As a robust defence of one's ideals is always reticent, I need something that will demonstrate this prowess.
+19.09.2024
+	1454: If you want to stare at something...stare at this.
+27.01.2025
+	2058: Not so much done. How can we use this if off Windows and Framework?
+
