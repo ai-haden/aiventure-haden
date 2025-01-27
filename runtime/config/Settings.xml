@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!-- General settings -->
+  <item name="authorization" value="false"/>
+  <item name="differencemagnitude" value="1E-5"/>
+  <item name="holdingcurrency" value="EUR"/>
+  <item name="logfile" value="logs"/>
+  <item name="numberofunitstotransact" value="10"/>
+  <item name="tradingcurrency" value="GBP"/>
+  <!-- Specific to Encog -->
+  <item name="errorresolution" value="5E-4"/>
+  <item name="maxtrainingerror" value="5E-4"/>
+  <item name="predictionsize" value="2"/>
+  <item name="trainingalgorithm" value="Resilient"/>
+  <item name="trainingsize" value="1000"/>
+  <!-- Specific to Boagaphish -->
+  <item name="analysistrajectory" value="high"/>
+  <item name="candleformat" value="midpoint"/>
+  <item name="dailyalignment" value="0"/>
+  <item name="errortolerance" value="1E-3"/>
+  <item name="forecastsize" value="5"/>
+  <item name="granularity" value="M1"/>
+  <item name="iterations" value="200"/>
+  <item name="learningrate" value="0.1"/>
+  <item name="momentum" value="0"/>
+  <item name="networkcorrection" value="0.85"/>
+  <item name="numberofcandles" value="200"/>
+  <item name="predictionsizetrend" value="10"/>
+  <item name="sigmoidalpha" value="2.0"/>
+  <item name="trailingdigits" value="8"/>
+  <item name="trainingdata" value="sinusoid"/>
+  <item name="trainingrate" value="0.1"/>
+  <item name="transferfunction" value="Gaussian"/>
+  <item name="windowsize" value="5"/>
+</root>
