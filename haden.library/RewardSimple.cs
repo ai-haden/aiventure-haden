@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Boagaphish.Reinforcement
+namespace Haden.Library
 {
     public class RewardSimple
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Haden.Library
+namespace Haden.Library.Attributes
 {
     //[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
     public class LuaAttribute : Attribute

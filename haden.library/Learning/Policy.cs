@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Haden.Library.DecisionTree;
 
-namespace Haden.Library
+namespace Haden.Library.Learning
 {
     /// <summary>
     /// The complete network of states that describes a reinforcement learning based decision tree. Learning is performed by the "Learn" method, by providing many data samples in the form of a DataVectorTraining class. After learning is finished, a new data point can be classified. The property "DecisionTree" provides a node based version of the resulting logic.

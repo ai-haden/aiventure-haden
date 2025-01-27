@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Haden.Library
+namespace Haden.Library.Learning
 {
     /// <summary>
     /// A single unique combination of feature-value pairs, that describes a portion of a datavector. Queries are used to indicate which are the most desirable next states, if that is a desired action. Labels are used for classifying a datavector that would visit this state. Queries and Labels can be compared to determine an action, such as moving to a next state or reporting a label.

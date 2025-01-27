@@ -1,5 +1,5 @@
 ﻿
-namespace Haden.Library
+namespace Haden.Library.Learning
 {
     /// <summary>
     /// Extends the "FeatureValuePair" class to have an importance attribute.

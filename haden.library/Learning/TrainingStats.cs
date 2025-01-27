@@ -1,5 +1,5 @@
 ﻿
-namespace Haden.Library
+namespace Haden.Library.Learning
 {
     public class TrainingStats
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Haden.Library
+namespace Haden.Library.Learning
 {
     public class DataVector
     {

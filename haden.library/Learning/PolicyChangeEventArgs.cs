@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Haden.Library
+namespace Haden.Library.Learning
 {
     public class PolicyChangeEventArgs : EventArgs
     {

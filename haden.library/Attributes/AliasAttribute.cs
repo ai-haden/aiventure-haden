@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Haden.Library
+namespace Haden.Library.Attributes
 {
     public class AliasAttribute : Attribute
     {

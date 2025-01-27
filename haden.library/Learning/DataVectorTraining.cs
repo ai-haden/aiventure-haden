@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Haden.Library
+namespace Haden.Library.Learning
 {
     /// <summary>
     /// An extension of the DataVector class. It includes a classification label for this datavector. Each feature also contains its relative reward (or cost).

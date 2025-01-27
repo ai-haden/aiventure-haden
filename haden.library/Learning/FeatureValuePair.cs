@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Haden.Library
+namespace Haden.Library.Learning
 {
     /// <summary>
     /// A combination of feature name and its respective value.

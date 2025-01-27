@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Haden.Library
+namespace Haden.Library.Learning
 {
     /// <summary>
     /// A combination of feature and related label. A list of queries is usually used for tracking possible transitions from state to state.
